@@ -1,11 +1,13 @@
 import React from 'react';
-
+import $ from 'jquery'; 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       term: ''
     }
+    this.onChange = this.onChange.bind(this);
+    this.search = this.search.bind(this);
   }
 
   onChange (e) {
@@ -15,7 +17,18 @@ class Search extends React.Component {
   }
 
   search() {
-    this.props.onSearch(this.state.term);
+    // this.props.onSearch(this.state.term);
+    // var temp = this.state.term;
+    // $(document).ready(function(){
+    //    $.ajax({
+    //   type: "POST",
+    //   url: 'http://127.0.0.1:1128 ',
+    //   data: temp,
+    //   success: function () { console.log('Success'); },
+    //   dataType: 'application/json'
+    // });
+    // })
+   
   }
 
   render() {

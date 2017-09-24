@@ -1,0 +1,29 @@
+var getReposByUsername = function(userName){
+	   $(document).ready(function(){ 
+	   	var temp = this.state.term;
+       $.ajax({
+      type: "GET",
+      url: 'http://127.0.0.1:1128/+userName+/repos',
+     
+      success: function () { console.log('Success'); },
+
+
+      dataType: 'application/json'
+    });
+    })
+   // ,
+   //  $(document).ready(function(){
+   //  		var temp = this.state.term;
+   //     $.ajax({
+   //    type: "POST",
+   //    url: 'http://127.0.0.1:1128 ',
+   //    data: temp,
+   //    success: function () { console.log('Success'); },
+   //    dataType: 'application/json'
+   //  });
+   //  })
+
+}
+export  getReposByUsername;
+
+

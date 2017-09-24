@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RepoList from './components/RepoList.jsx';
-
+// import github from './helpers/github'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +15,18 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
+     // this.props.onSearch(this.state.term);
+    var temp = this.state.term;
+    $(document).ready(function(){
+       $.ajax({
+      type: "POST",
+      url: 'http://127.0.0.1:1128/repos',
+      data: temp,
+      success: function () { console.log('Success'); },
+      dataType: 'application/json'
+    });
+    })
+   
     // TODO
   }
 
